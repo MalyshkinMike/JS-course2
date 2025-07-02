@@ -1,11 +1,13 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import RoadmapGraph from '../components/roadmap/RoadmapGraph';
 
-export default function MyReactPage() {
+export default function MyPage() {
   return (
-    <Layout>
-      <h1>My React page</h1>
-      <p>This is a React page</p>
+    <Layout title="Roadmap Test">
+      <main>
+        <RoadmapGraph />
+      </main>
     </Layout>
   );
 }

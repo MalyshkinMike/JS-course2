@@ -7,7 +7,6 @@
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 12px;
-  background-color: #f9f9f9;
 }
 
 .module {
@@ -18,11 +17,7 @@
   border-radius: 8px;
 }
 
-.module.open {
-  background-color: #fffbe6;
-}
 
 .module.completed {
-  background-color: #e6ffed;
   text-decoration: line-through;
 }

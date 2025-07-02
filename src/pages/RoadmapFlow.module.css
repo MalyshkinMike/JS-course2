@@ -1,0 +1,66 @@
+.node {
+  background: #1c1e21;
+  border: 2px solid #3e4042;
+  border-radius: 10px;
+  padding: 10px 16px;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+  min-width: 150px;
+  text-align: center;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.node.completed {
+  background-color: #2ecc71;
+  border-color: #27ae60;
+}
+
+.node.partial {
+  background-color: #f1c40f;
+  border-color: #f39c12;
+}
+
+.node.incomplete {
+  background-color: #e74c3c;
+  border-color: #c0392b;
+}
+
+.module-list {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.module {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.module.completed {
+  color: #2ecc71;
+  text-decoration: line-through;
+}
+
+.module.locked {
+  color: #888;
+  opacity: 0.6;
+}
+
+.mark-complete {
+  margin-top: 10px;
+  padding: 4px 8px;
+  font-size: 13px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mark-complete:hover {
+  background-color: #2980b9;
+}
