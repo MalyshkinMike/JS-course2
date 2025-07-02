@@ -79,6 +79,11 @@ const config = {
             label: 'Theory',
           },
           {
+            href: '/roadmap/',
+            label: 'Roadmap',
+            position: 'left'
+          },
+          {
             href: 'https://github.com/MalyshkinMV',
             label: 'GitHub',
             position: 'right',
