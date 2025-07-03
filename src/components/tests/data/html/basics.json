@@ -1,0 +1,38 @@
+[
+  {
+    "id": "q1",
+    "type": "multiple-choice",
+    "prompt": "What does HTML stand for?",
+    "options": [
+      "HyperText Markup Language",
+      "Hyper Transfer Markup Language",
+      "Home Tool Markup Language",
+      "Hyperlinking and Text Management Language"
+    ],
+    "correctAnswers": [0],
+    "moduleId": "html_basics"
+  },
+  {
+    "id": "q2",
+    "type": "code-review",
+    "prompt": "What will the following HTML render?",
+    "code": "<p><b>Hello</b> world</p>",
+    "options": [
+      "A bold paragraph",
+      "Only the word 'Hello' will be bold",
+      "The whole line is italic",
+      "Syntax error"
+    ],
+    "correctAnswers": [1],
+    "moduleId": "html_basics"
+  },
+  {
+    "id": "q3",
+    "type": "code-writing",
+    "prompt": "Write an HTML snippet that creates an unordered list with three items: Apple, Banana, Cherry.",
+    "starterCode": "",
+    "expectedOutput": "<ul><li>Apple</li><li>Banana</li><li>Cherry</li></ul>",
+    "testType": "html-equality",
+    "moduleId": "html_basics"
+  }
+]

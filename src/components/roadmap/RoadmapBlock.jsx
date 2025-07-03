@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
-import Link from "@docusaurus/Link";
+import { useProgress } from '../../hooks/useProgress';
+
 
 const RoadmapBlock = ({
   block,
@@ -9,11 +10,13 @@ const RoadmapBlock = ({
   isLocked,
   blockRefs,
 }) => {
+  const progress = useProgress(); // { "html-basics": "completed", ... }
   const completedCount = block.modules.filter(
-    (m) => m.status === "completed"
+    (m) => progress[m.id] === "completed"
   ).length;
   const totalModules = block.modules.length;
   const isCompleted = completedCount === totalModules;
+  
 
   return (
     <div
@@ -37,11 +40,11 @@ const RoadmapBlock = ({
       {isExpanded && (
         <div className="module-list">
           {block.modules.map((mod) => (
-            <div key={mod.id} className={clsx("module", mod.status)}>
+            <div key={mod.id} className={clsx("module", progress[mod.id])}>
               <label className="checkbox-wrapper">
                 <input
                   type="checkbox"
-                  checked={mod.status === "completed"}
+                  checked={progress[mod.id] === "completed"}
                   readOnly
                   className="custom-checkbox"
                 />

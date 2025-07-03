@@ -8,7 +8,6 @@ const roadmap = [
       {
         id: "how-to-use",
         title: "How to use me",
-        status: "completed",
         theory: "/docs/welcome/howto.md",
         test: "/tests/welcome/howto",
       },
@@ -24,14 +23,12 @@ const roadmap = [
       {
         id: "css-selectors",
         title: "Selectors",
-        status: "incomplete",
         theory: "/docs/css/selectors.md",
         test: "tests/css/selectors/",
       },
       {
         id: "css-box",
         title: "Box Model",
-        status: "incomplete",
         theory: "/docs/css/css-box.md",
         test: "tests/css/box/",
       },
@@ -45,16 +42,14 @@ const roadmap = [
     dependsOn: ["welcome"],
     modules: [
       {
-        id: "html-tags",
-        title: "Tags",
-        status: "incomplete",
-        theory: "/docs/html/html-tags.md",
-        test: "tests/html/tags",
+        id: "html-basics",
+        title: "Basics",
+        theory: "/docs/html/basics.md",
+        test: "tests/html/basics",
       },
       {
         id: "document-object-model",
         title: "DOM",
-        status: "incomplete",
         theory: "/docs/html/dom.md",
         test: "tests/html/dom",
       },
@@ -70,14 +65,12 @@ const roadmap = [
       {
         id: "html-tags",
         title: "Tags",
-        status: "incomplete",
         theory: "/docs/html/html-tags.md",
         test: "tests/html/tags",
       },
       {
         id: "document-object-model",
         title: "DOM",
-        status: "incomplete",
         theory: "/docs/html/dom.md",
         test: "tests/html/dom",
       },

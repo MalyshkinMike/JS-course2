@@ -5,9 +5,11 @@ import roadmap from "./data/roadmap";
 import RoadmapBlock from "./RoadmapBlock";
 import RoadmapConnections from "./RoadmapConnections";
 import "./css/Roadmap.css";
+import { useProgress } from '../../hooks/useProgress';
 
 function isBlockCompleted(block) {
-  return block.modules.every((m) => m.status === "completed");
+  const progress = useProgress();
+  return block.modules.every((m) => progress[m.id] === "completed");
 }
 
 function assignLevels(blocks) {
