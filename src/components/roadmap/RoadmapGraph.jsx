@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useColorMode } from "@docusaurus/theme-common";
 import clsx from "clsx";
 import roadmap from "./data/roadmap";
@@ -43,6 +43,11 @@ const RoadmapGraph = () => {
   const [expanded, setExpanded] = useState(null);
   const { colorMode } = useColorMode();
   const blockRefs = useRef({});
+
+  const containerRef = useRef(null); // 👈 roadmap-container
+  const scalerRef = useRef(null); // 👈 roadmap-scaler
+  const [scale, setScale] = useState(1); // 👈 scaling state
+
   const blockStatusMap = {};
   roadmap.forEach((block) => {
     blockStatusMap[block.id] = isBlockCompleted(block);
@@ -60,6 +65,26 @@ const RoadmapGraph = () => {
   const toggleExpand = (id) => {
     setExpanded((prev) => (prev === id ? null : id));
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (!containerRef.current || !scalerRef.current) return;
+
+      const containerWidth = containerRef.current.offsetWidth;
+      const parentWidth = scalerRef.current.offsetWidth;
+
+      if (containerWidth > parentWidth) {
+        const newScale = Math.min(1, parentWidth / containerWidth);
+        setScale(newScale);
+      } else {
+        setScale(1); // reset
+      }
+    };
+
+    handleResize(); // call once on mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="roadmap-graph-wrapper" style={{ position: "relative" }}>
@@ -81,7 +106,11 @@ const RoadmapGraph = () => {
             </div>
           ))}
       </div>
-      <RoadmapConnections roadmap={roadmap} blockRefs={blockRefs} expanded={expanded}/>
+      <RoadmapConnections
+        roadmap={roadmap}
+        blockRefs={blockRefs}
+        expanded={expanded}
+      />
     </div>
   );
 };

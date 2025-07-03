@@ -37,12 +37,7 @@ const RoadmapBlock = ({
       {isExpanded && (
         <div className="module-list">
           {block.modules.map((mod) => (
-            <Link
-              key={mod.id}
-              to={mod.link}
-              onClick={(e) => e.stopPropagation()}
-              className={clsx("module", mod.status)}
-            >
+            <div key={mod.id} className={clsx("module", mod.status)}>
               <label className="checkbox-wrapper">
                 <input
                   type="checkbox"
@@ -53,10 +48,45 @@ const RoadmapBlock = ({
                 <span className="checkmark"></span>
                 {mod.title}
               </label>
-            </Link>
+              <div className="module-actions">
+                <button
+                  className="module-btn theory"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.location.href = mod.theory;
+                  }}
+                >
+                  Theory
+                </button>
+                <button
+                  className="module-btn test"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.location.href = mod.test;
+                  }}
+                >
+                  Test
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       )}
+
+      {isExpanded && (
+        <div className="final-test-wrapper">
+        <button
+          className="final-test-btn"
+          onClick={(e) => {
+            e.stopPropagation();
+            window.location.href = `${block.test}`;
+          }}
+        >
+          Final Test
+        </button>
+      </div>
+      )}
+      
     </div>
   );
 };

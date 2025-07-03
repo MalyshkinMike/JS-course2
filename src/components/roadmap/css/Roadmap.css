@@ -69,25 +69,7 @@
   font-size: 0.95rem;
 }
 
-.module {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--ifm-font-color-base);
-  text-decoration: none;
-}
 
-.module.completed {
-  color: var(--ifm-color-primary-lightest);
-}
-
-.module.incomplete {
-  color: var(--ifm-color-primary-darkest);
-}
-
-.module.locked {
-  color: var(--ifm-color-locked);
-}
 
 .roadmap-row {
   display: flex;
@@ -112,15 +94,7 @@
 }
 
 
-.checkbox-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  user-select: none;
-  font-size: 0.95rem;
-  color: inherit;
-}
+
 
 .custom-checkbox {
   display: none;
@@ -144,4 +118,92 @@
   border: solid ;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
+}
+
+.roadmap-scaler {
+  width: 100%;
+  overflow-x: auto;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.roadmap-container.scaled {
+  transform-origin: top center;
+  transition: transform 0.3s ease;
+}
+
+.module {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+}
+
+.module.completed {
+  color: var(--ifm-color-primary-lightest);
+}
+
+.module.incomplete {
+  color: var(--ifm-color-primary-darkest);
+}
+
+.module.locked {
+  color: var(--ifm-color-locked);
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.95rem;
+  color: inherit;
+  flex: 1;
+  font-weight: 500;
+}
+
+
+.module-actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.module-btn {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-content);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.module-btn:hover {
+  background-color: var(--ifm-color-emphasis-300);
+}
+
+.final-test-wrapper {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.final-test-btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.final-test-btn:hover {
+  background-color: var(--ifm-color-primary-dark);
 }
